@@ -1,13 +1,14 @@
 // Import lit-html functions
 import {html, render} from 'lit-html';
 
-const myTemplate = (name, time) => {
-  return html`
-     ${time === '12'? html` Buenos días ${name} <button`: html` buenas noches ${name}` }
-  `;
-}
+const items = [1,2,3,4,5]
+const myTemplate = ()=> html`
+  <ul>
+    ${items.map((item) => html`<li>${item}</li>`)}
+  </ul>
+`;
 
 
-render(myTemplate('lit-html','24'), document.body.querySelector('section')
+render(myTemplate(), document.body.querySelector('section')
 );
 
